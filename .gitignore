@@ -1,0 +1,53 @@
+=============== 
+Unity generated
+===============
+/Temp/
+/Library/
+/Build/
+/Builds/
+
+=====================================
+Visual Studio / MonoDevelop generated
+=====================================
+/ExportedObj/
+/obj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+
+============
+OS generated
+============
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+===============
+uEcho generated
+===============
+.uEcho
+
+UnityVS.VersionSpecific.dll
+UnityVS.VersionSpecific.dll.meta
+ShaderForge
+ShaderForge.meta
+
+SyntaxTree.VisualStudio.Unity.Bridge.dll*
+SyntaxTree.VisualStudio.Unity.Messaging.dll*
+
+===============
+shared files
+===============
+
+ReflectionProbe*.exr*
+Lightmap-*_comp_light*.exr*
+LightingData.asset*
