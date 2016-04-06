@@ -32,7 +32,6 @@ public class floorcalibrator : MonoBehaviour {
 
 		File.Copy(steamPath + "/config/chaperone_info.vrchap", steamPath + "/config/chaperone_info.vrchap_previous_" + DateTime.Now.ToString("yy-MM-dd_HHmm.ss"));
 
-
 		StartCoroutine(CheckFloor());
 	}
 
@@ -52,25 +51,16 @@ public class floorcalibrator : MonoBehaviour {
 				camerarig.transform.localPosition = Vector3.up * -median;
 
 				// save value
-				//File.WriteAllText("floorlevel.ini", "" + median, System.Text.Encoding.UTF8);
 				JSONObject chap=JSONObject.Create(chaperoneJSON);
 				Debug.Log(chap["universes"]);
 				for (int i = 0; i < chap["universes"].Count; i++) {
-					//chap["universes"][i]["standing"][1] = chap["universes"][i]["standing"][1].f - median;
 					chap["universes"][i]["standing"]["translation"][1] = JSONObject.Create( chap["universes"][i]["standing"]["translation"][1].f - median );
 					Debug.Log( chap["universes"][i]["standing"]["translation"][1] );
-					//chap["universes"][i]["standing"]["translation"][1] = JSONObject.Create( 0 );
 				}
-				File.WriteAllText("C:\\Steam\\config\\chaperone_info.vrchap", chap.ToString(true), System.Text.Encoding.ASCII);
+				File.WriteAllText(steamPath + "/config/chaperone_info.vrchap", chap.ToString(true), System.Text.Encoding.ASCII);
 
 				floorvalues = new ArrayList();
-				/*
-				if (Mathf.Abs(lastMedian - median) < 0.01f) {
-					Debug.Log("threshold reached");
-					Application.Quit();
-				}
-				*/
-
+                
 				lastMedian = median;
 			}
 		}
